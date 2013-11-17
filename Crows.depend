@@ -1,31 +1,52 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
 1383837109 source:c:\users\estar\desktop\sdl-tests-master\main.cpp
+=======
+1382439021 source:c:\users\estar\desktop\sdl-tests-master\main.cpp
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 	<fstream>
 	<cstdio>
 	<glm/glm.hpp>
 	"include/manager.h"
 
+<<<<<<< HEAD
 1383079534 source:c:\users\estar\desktop\sdl-tests-master\src\manager.cpp
 	"..\include\manager.h"
 	<cstdlib>
 	<sstream>
 
 1383078794 c:\users\estar\desktop\sdl-tests-master\include\manager.h
+=======
+1382438869 source:c:\users\estar\desktop\sdl-tests-master\src\manager.cpp
+	"..\include\manager.h"
+	<cstdlib>
+
+1382269428 c:\users\estar\desktop\sdl-tests-master\include\manager.h
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 	"manager_space.h"
 	"render_manager.h"
 	"ttf_manager.h"
 	<string>
 
+<<<<<<< HEAD
 1383839045 source:c:\users\estar\desktop\sdl-tests-master\src\ttf_manager.cpp
+=======
+1382439406 source:c:\users\estar\desktop\sdl-tests-master\src\ttf_manager.cpp
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 	"../include/ttf_manager.h"
 	<cmath>
 	<string>
 
+<<<<<<< HEAD
 1383076811 c:\users\estar\desktop\sdl-tests-master\include\ttf_manager.h
+=======
+1382271928 c:\users\estar\desktop\sdl-tests-master\include\ttf_manager.h
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 	"manager_space.h"
 	"render_manager.h"
 	<SDL2/SDL_ttf.h>
 	<vector>
+<<<<<<< HEAD
 	<glm/gtc/matrix_transform.hpp>
 	<glm/glm.hpp>
 
@@ -40,6 +61,18 @@
 	<cstdlib>
 	<stdio.h>
 	<SDL2/SDL_image.h>
+=======
+
+1382264516 c:\users\estar\desktop\sdl-tests-master\include\manager_space.h
+	<SDL2/SDL.h>
+	<GL/glew.h>
+	<GL/gl.h>
+
+1382439047 source:c:\users\estar\desktop\sdl-tests-master\src\manager_space.cpp
+	"../include/manager_space.h"
+	<cstdlib>
+	<stdio.h>
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 
 1382104640 source:c:\users\estar\desktop\sdl-tests-master\src\manager_render.cpp
 	"../include/manager_render.h"
@@ -51,6 +84,7 @@
 	<GL/gl.h>
 	<vector>
 
+<<<<<<< HEAD
 1383837560 c:\users\estar\desktop\sdl-tests-master\include\render_manager.h
 	"manager_space.h"
 	<vector>
@@ -61,6 +95,16 @@
 	"../include/render_manager.h"
 	<fstream>
 	<SDL2/SDL_image.h>
+=======
+1382272317 c:\users\estar\desktop\sdl-tests-master\include\render_manager.h
+	"manager_space.h"
+	<vector>
+	<string>
+
+1382439070 source:c:\users\estar\desktop\sdl-tests-master\src\render_manager.cpp
+	"../include/render_manager.h"
+	<fstream>
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 
 1382127125 source:c:\users\estar\desktop\sdl-tests-master\icon.rc
 

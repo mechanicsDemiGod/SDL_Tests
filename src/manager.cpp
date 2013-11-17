@@ -1,7 +1,11 @@
 #include "..\include\manager.h"
 
 #include <cstdlib>
+<<<<<<< HEAD
 #include <sstream>
+=======
+
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 
 using namespace manager_space;
 
@@ -18,8 +22,13 @@ void manager::init() {
                  GAME_TITLE,
                  SDL_WINDOWPOS_CENTERED,
                  SDL_WINDOWPOS_CENTERED,
+<<<<<<< HEAD
                  W,
                  H,
+=======
+                 640,
+                 480,
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
                  SDL_WINDOW_OPENGL |SDL_WINDOW_RESIZABLE
              );
     ttf_manag.init();
@@ -52,6 +61,7 @@ void manager::end() {
         SDL_DestroyWindow(window);
 }
 
+<<<<<<< HEAD
 void manager::write(std::string s, float x, float y){
     if(gl.in_use != FONT_SHADER) {
         gl.useProg(FONT_SHADER);
@@ -64,11 +74,25 @@ void manager::write(std::string s, float x, float y){
         int x1, x2;
         float xt1, xt2;
         //position
+=======
+void manager::write(std::string s, int x, int y) {
+    if(gl.in_use != 0) {
+        gl.useProg(0);
+        gl.putTex(ttf_manag.font.id, 0, "text");
+    }
+
+    int prec;
+    for(int i=0; i<s.size(); i++) {
+        GLuint posId  = glGetUniformLocation(gl.getProg(gl.in_use), "pos");
+        int loc = int(s[i]) - 32;
+        int x1, x2;
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
         if(loc == 0)
             x1 = 0;
         else
             x1 = ttf_manag.metrics[loc-1].w;
         x2 = ttf_manag.metrics[loc].w;
+<<<<<<< HEAD
         //texture
         if(loc == 0)
             xt1 = 0;
@@ -93,6 +117,16 @@ void manager::write(int s, float x, float y){
     write(ss, x, y);
 }
 
+=======
+        glUniform2f(posId, x + prec, y);
+
+        prec+=x2-x1;
+
+        ttf_manag.write_let();
+    }
+}
+
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 //SDL
 //{
 
@@ -134,7 +168,10 @@ void manager::windowClose() {
 }
 
 void manager::keyboardDown(SDL_Keysym key) {
+<<<<<<< HEAD
     manager_space::test+=key.sym;
+=======
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
     switch(key.sym) {
     case SDLK_ESCAPE: {
         running = false;

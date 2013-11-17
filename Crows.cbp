@@ -18,10 +18,16 @@
 				<Linker>
 					<Add option="-lglew32s" />
 					<Add option="-lmingw32" />
+<<<<<<< HEAD
 					<Add option="-lSDL2main" />
 					<Add option="-lSDL2" />
 					<Add option="-lSDL2_TTF" />
 					<Add option="-lSDL2_image" />
+=======
+					<Add option="-lSDL2_TTF" />
+					<Add option="-lSDL2main" />
+					<Add option="-lSDL2" />
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 					<Add option="-lopengl32" />
 					<Add option="-BulletDynamics" />
 					<Add option="-BulletCollision" />

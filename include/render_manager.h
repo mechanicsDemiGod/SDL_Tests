@@ -3,7 +3,10 @@
 #include "manager_space.h"
 #include <vector>
 #include <string>
+<<<<<<< HEAD
 #include <glm/glm.hpp>
+=======
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 
 using namespace std;
 
@@ -25,6 +28,7 @@ public:
     virtual ~render_manager();
     void loadShader(const char *vertexpath, const char *fragmentpath);
     void end();
+<<<<<<< HEAD
     void init();
     void useProg(int index);
     GLuint getProg(int index);
@@ -36,6 +40,14 @@ public:
     int in_use;
     vector<GLuint> prog;
     vector<tex> texture;
+=======
+    void useProg(int index);
+    GLuint getProg(int index);
+    void putTex(GLuint t_id, int where, const char *var_name);
+
+    int in_use;
+    vector<GLuint> prog;
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 };
 
 #endif // MANAGER_RENDER_H

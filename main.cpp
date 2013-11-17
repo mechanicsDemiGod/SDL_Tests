@@ -19,7 +19,10 @@ void init(manager &manag) {
     }
 
     manag.init();
+<<<<<<< HEAD
 
+=======
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
     if (manag.window == NULL) {
         sdlDie();
     }
@@ -28,7 +31,13 @@ void init(manager &manag) {
     manag.initOpengl();
 
     output("init shaders");
+<<<<<<< HEAD
     manag.gl.init();
+=======
+    string path = "data/shaders/";
+    manag.gl.loadShader((path + "simple.vert").c_str(), (path + "simple.frag").c_str());
+    manag.gl.loadShader((path + "2dtext.vert").c_str(), (path + "2dtext.frag").c_str());
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 
     output("init ttf fonts");
     manag.ttf_manag.make(font_name, font_size, 32, 126);
@@ -139,12 +148,21 @@ int main(int argc, char **argv) {
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+<<<<<<< HEAD
         manag.write(manager_space::test, 0, 0);
         int time = SDL_GetTicks() - lasttime;
         manag.write(manager_space::FPS - time, W-font_size, 0);
 
         SDL_GL_SwapWindow(manag.window);
 
+=======
+        manag.write("hello", 0, 0);
+
+        SDL_GL_SwapWindow(manag.window);
+
+        int time = SDL_GetTicks() - lasttime;
+        //printf("ms : %d\n",manager_space::FPS - time);
+>>>>>>> e9fa410b886771995a5fa2629e3686a256048643
         if(time < manager_space::FPS) {
             //SDL_Delay(manag.FPS - time);
         }
