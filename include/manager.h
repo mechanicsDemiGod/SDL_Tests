@@ -34,12 +34,8 @@ public:
     bool runs() {
         return running;
     }
-<<<<<<< HEAD
     void write(int s, float x, float y);
     void write(std::string s, float x, float y);
-=======
-    void write(std::string s, int x, int y);
->>>>>>> e9fa410b886771995a5fa2629e3686a256048643
     //VARIABLES
     render_manager gl;
     ttf_manager ttf_manag;

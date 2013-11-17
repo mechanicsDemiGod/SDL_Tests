@@ -4,10 +4,7 @@
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 #include <GL/gl.h>
-<<<<<<< HEAD
 #include <iostream>
-=======
->>>>>>> e9fa410b886771995a5fa2629e3686a256048643
 
 class tex{
     public :
@@ -20,7 +17,6 @@ class tex{
 };
 
 namespace manager_space{
-<<<<<<< HEAD
     extern std::string test, SHADERS_PATH;
     extern unsigned int W, H ;
     extern char* GAME_TITLE;
@@ -33,16 +29,6 @@ namespace manager_space{
 
     GLuint surf2tex(SDL_Surface *surf);
 
-=======
-    extern unsigned int W, H ;
-    extern char* GAME_TITLE;
-    extern int FPS, font_size;
-    extern bool running, fullscreen;
-    extern const char *font_name;
-
-    void output(const char* c);
-
->>>>>>> e9fa410b886771995a5fa2629e3686a256048643
     void sdlDie();
 }
 
