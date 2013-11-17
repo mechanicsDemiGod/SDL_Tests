@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1383837109 source:c:\users\estar\desktop\sdl-tests-master\main.cpp
+	<fstream>
+	<cstdio>
+	<glm/glm.hpp>
+	"include/manager.h"
+
+1383079534 source:c:\users\estar\desktop\sdl-tests-master\src\manager.cpp
+	"..\include\manager.h"
+	<cstdlib>
+	<sstream>
+
+1383078794 c:\users\estar\desktop\sdl-tests-master\include\manager.h
+	"manager_space.h"
+	"render_manager.h"
+	"ttf_manager.h"
+	<string>
+
+1383839045 source:c:\users\estar\desktop\sdl-tests-master\src\ttf_manager.cpp
+	"../include/ttf_manager.h"
+	<cmath>
+	<string>
+
+1383076811 c:\users\estar\desktop\sdl-tests-master\include\ttf_manager.h
+	"manager_space.h"
+	"render_manager.h"
+	<SDL2/SDL_ttf.h>
+	<vector>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/glm.hpp>
+
+1383839064 c:\users\estar\desktop\sdl-tests-master\include\manager_space.h
+	<SDL2/SDL.h>
+	<GL/glew.h>
+	<GL/gl.h>
+	<iostream>
+
+1383927821 source:c:\users\estar\desktop\sdl-tests-master\src\manager_space.cpp
+	"../include/manager_space.h"
+	<cstdlib>
+	<stdio.h>
+	<SDL2/SDL_image.h>
+
+1382104640 source:c:\users\estar\desktop\sdl-tests-master\src\manager_render.cpp
+	"../include/manager_render.h"
+	"../include/manager_space.h"
+	<fstream>
+
+1382104568 c:\users\estar\desktop\sdl-tests-master\include\manager_render.h
+	<GL/glew.h>
+	<GL/gl.h>
+	<vector>
+
+1383837560 c:\users\estar\desktop\sdl-tests-master\include\render_manager.h
+	"manager_space.h"
+	<vector>
+	<string>
+	<glm/glm.hpp>
+
+1383927847 source:c:\users\estar\desktop\sdl-tests-master\src\render_manager.cpp
+	"../include/render_manager.h"
+	<fstream>
+	<SDL2/SDL_image.h>
+
+1382127125 source:c:\users\estar\desktop\sdl-tests-master\icon.rc
+
