@@ -86,6 +86,7 @@ void render_manager::loadPNG(const char *name){
     SDL_Surface *img = IMG_Load(name);
     GLuint img_id = surf2tex(img);
     texture.push_back(tex(img_id,img->w,img->h,img->format->BytesPerPixel));
+    SDL_FreeSurface(img);
 }
 
 void render_manager::deletePNG(int ind){
@@ -169,14 +170,17 @@ void render_manager::loadShader(const char *vertexpath, const char *fragmentpath
 }
 
 void render_manager::useProg(int index) {
-    glUseProgram(prog[index]);
-    in_use = index;
+    if(in_use != index) {
+        glUseProgram(prog[index]);
+        in_use = index;
+    }
 }
 
 void render_manager::init(){
     string path = SHADERS_PATH;
     this->loadShader((path + "simple.vert").c_str(), (path + "simple.frag").c_str());
     this->loadShader((path + "2dtext.vert").c_str(), (path + "2dtext.frag").c_str());
+    this->loadShader((path + "2dimg.vert").c_str(), (path + "2dimg.frag").c_str());
     output("init image loader");
     if(!IMG_Init(IMG_INIT_PNG)){
         output(IMG_GetError());

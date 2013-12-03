@@ -6,10 +6,17 @@
 using namespace std;
 using namespace manager_space;
 
-void draw(){
+void draw(manager &manag) {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    manag.write(manager_space::test, 0, 0);
+    int time = SDL_GetTicks() - manag.lasttime;
+    manag.write(manager_space::FPS - time, W-font_size, 0);
+    manag.drawImg(0,manag.mx, manag.my);
+    SDL_GL_SwapWindow(manag.window);
 }
 
-void work(){
+void work(manager &manag) {
 }
 
 void init(manager &manag) {
@@ -27,6 +34,9 @@ void init(manager &manag) {
     output("init opengl");
     manag.initOpengl();
 
+    output("init images");
+    manag.initImg();
+
     output("init shaders");
     manag.gl.init();
 
@@ -37,7 +47,7 @@ void init(manager &manag) {
     glClearColor(.1, .2, .3, 1);
 }
 
-void end(manager &manag){
+void end(manager &manag) {
     manag.end();
     TTF_Quit();
     SDL_Quit();
@@ -50,7 +60,7 @@ int main(int argc, char **argv) {
 
 
     while(manag.runs()) {
-        int lasttime = SDL_GetTicks();
+        manag.lasttime = SDL_GetTicks();
 
         while(SDL_PollEvent(&event)) {
             switch(event.type) {
@@ -108,24 +118,24 @@ int main(int argc, char **argv) {
                 break;
             }
 
-            case SDL_MOUSEMOTION:{
+            case SDL_MOUSEMOTION: {
                 manag.mouseMove(event.motion.x, event.motion.y);
                 break;
             }
 
-            case SDL_MOUSEBUTTONDOWN:{
+            case SDL_MOUSEBUTTONDOWN: {
                 manag.mouseMove(event.motion.x, event.motion.y);
                 manag.mouseButtonDown(event.button);
                 break;
             }
 
-            case SDL_MOUSEBUTTONUP:{
+            case SDL_MOUSEBUTTONUP: {
                 manag.mouseMove(event.motion.x, event.motion.y);
                 manag.mouseButtonUp(event.button);
                 break;
             }
 
-            case SDL_MOUSEWHEEL:{
+            case SDL_MOUSEWHEEL: {
                 manag.mouseWheel(event.motion.x, event.motion.y);
                 break;
             }
@@ -133,21 +143,9 @@ int main(int argc, char **argv) {
             }
         }
 
-        draw();
+        draw(manag);
 
-        work();
-
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        manag.write(manager_space::test, 0, 0);
-        int time = SDL_GetTicks() - lasttime;
-        manag.write(manager_space::FPS - time, W-font_size, 0);
-
-        SDL_GL_SwapWindow(manag.window);
-
-        if(time < manager_space::FPS) {
-            //SDL_Delay(manag.FPS - time);
-        }
+        work(manag);
     }
 
     end(manag);

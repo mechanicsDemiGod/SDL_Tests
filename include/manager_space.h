@@ -23,7 +23,7 @@ namespace manager_space{
     extern int FPS, font_size, inv_font_size;
     extern bool running, fullscreen;
     extern const char *font_name;
-    extern GLuint FONT_SHADER;
+    extern GLuint FONT_SHADER, IMG_SHADER;
 
     void output(const char* c);
 

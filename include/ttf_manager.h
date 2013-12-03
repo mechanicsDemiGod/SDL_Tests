@@ -26,6 +26,7 @@ public:
     void init();
     void make(const char *name, int size, int a, int b);
     void write_let(int w, int h,float xt1, float yt1);
+    void drawImg(int w, int h);
     void setMat();
     void calcMat();
     glm::mat4 proj, model, view, mvp;

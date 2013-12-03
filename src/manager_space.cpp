@@ -23,12 +23,16 @@ std::string test="test";
 int font_size = 36;
 const char *font_name="data/fonts/UbuntuMono-R.ttf";
 ///}
+///imgs{
+std::string IMG_PATH = "data/img/";
+///}
 std::string SHADERS_PATH = "data/shaders/";
 unsigned int W = 1366 , H = 768;
-char* GAME_TITLE= {"Semaphores"};
+char* GAME_TITLE= {"Test"};
 int FPS = 40;
+
 bool running = true, fullscreen = false;
-GLuint FONT_SHADER =1;
+GLuint FONT_SHADER =1, IMG_SHADER=2;
 
 void output(const char* c) {
     printf("%s\n", c);

@@ -31,12 +31,16 @@ public:
     void mouseButtonDown(SDL_MouseButtonEvent e);
     void mouseButtonUp(SDL_MouseButtonEvent e);
     void mouseWheel(int x, int y);
+    void initImg();
+    void drawImg(int i, float x, float y);
+
     bool runs() {
         return running;
     }
     void write(int s, float x, float y);
     void write(std::string s, float x, float y);
     //VARIABLES
+    int lasttime;
     render_manager gl;
     ttf_manager ttf_manag;
     SDL_Window *window;

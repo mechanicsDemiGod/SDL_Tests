@@ -13,6 +13,22 @@ manager::~manager() {
     SDL_DestroyWindow(window);
 }
 
+void manager::initImg(){
+    gl.loadPNG("data/img/test.png");
+}
+
+void manager::drawImg(int i, float x, float y){
+    if(gl.in_use != IMG_SHADER) {
+        gl.useProg(IMG_SHADER);
+        gl.putTex(gl.texture[i].id, 0, "tex");
+    }
+    ttf_manag.view = glm::translate(glm::mat4(1), glm::vec3(x , y, 0));
+    ttf_manag.calcMat();
+    glUniformMatrix4fv(gl.getUniform("mvp"), 1, GL_FALSE, &ttf_manag.mvp[0][0]);
+    int w = gl.texture[i].w, h = gl.texture[i].h;
+    ttf_manag.drawImg(w, h);
+}
+
 void manager::init() {
     window = SDL_CreateWindow(
                  GAME_TITLE,
@@ -55,7 +71,7 @@ void manager::end() {
 void manager::write(std::string s, float x, float y){
     if(gl.in_use != FONT_SHADER) {
         gl.useProg(FONT_SHADER);
-        gl.putTex(ttf_manag.font.id, FONT_SHADER, "text");
+        gl.putTex(ttf_manag.font.id, 0, "text");
     }
 
     float prec=0;

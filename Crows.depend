@@ -1,27 +1,27 @@
 # depslib dependency file v1.0
-1383837109 source:c:\users\estar\desktop\sdl-tests-master\main.cpp
+1385157535 source:c:\users\estar\desktop\sdl-tests-master\main.cpp
 	<fstream>
 	<cstdio>
 	<glm/glm.hpp>
 	"include/manager.h"
 
-1383079534 source:c:\users\estar\desktop\sdl-tests-master\src\manager.cpp
+1385157519 source:c:\users\estar\desktop\sdl-tests-master\src\manager.cpp
 	"..\include\manager.h"
 	<cstdlib>
 	<sstream>
 
-1383078794 c:\users\estar\desktop\sdl-tests-master\include\manager.h
+1385156853 c:\users\estar\desktop\sdl-tests-master\include\manager.h
 	"manager_space.h"
 	"render_manager.h"
 	"ttf_manager.h"
 	<string>
 
-1383839045 source:c:\users\estar\desktop\sdl-tests-master\src\ttf_manager.cpp
+1385157649 source:c:\users\estar\desktop\sdl-tests-master\src\ttf_manager.cpp
 	"../include/ttf_manager.h"
 	<cmath>
 	<string>
 
-1383076811 c:\users\estar\desktop\sdl-tests-master\include\ttf_manager.h
+1385156988 c:\users\estar\desktop\sdl-tests-master\include\ttf_manager.h
 	"manager_space.h"
 	"render_manager.h"
 	<SDL2/SDL_ttf.h>
@@ -29,13 +29,13 @@
 	<glm/gtc/matrix_transform.hpp>
 	<glm/glm.hpp>
 
-1383839064 c:\users\estar\desktop\sdl-tests-master\include\manager_space.h
+1385157212 c:\users\estar\desktop\sdl-tests-master\include\manager_space.h
 	<SDL2/SDL.h>
 	<GL/glew.h>
 	<GL/gl.h>
 	<iostream>
 
-1383927821 source:c:\users\estar\desktop\sdl-tests-master\src\manager_space.cpp
+1385157208 source:c:\users\estar\desktop\sdl-tests-master\src\manager_space.cpp
 	"../include/manager_space.h"
 	<cstdlib>
 	<stdio.h>
@@ -51,13 +51,13 @@
 	<GL/gl.h>
 	<vector>
 
-1383837560 c:\users\estar\desktop\sdl-tests-master\include\render_manager.h
+1385156893 c:\users\estar\desktop\sdl-tests-master\include\render_manager.h
 	"manager_space.h"
 	<vector>
 	<string>
 	<glm/glm.hpp>
 
-1383927847 source:c:\users\estar\desktop\sdl-tests-master\src\render_manager.cpp
+1385157117 source:c:\users\estar\desktop\sdl-tests-master\src\render_manager.cpp
 	"../include/render_manager.h"
 	<fstream>
 	<SDL2/SDL_image.h>

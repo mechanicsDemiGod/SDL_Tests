@@ -137,3 +137,31 @@ void ttf_manager::write_let(int w, int h, float xt1, float xt2) {
     glDrawArrays( GL_TRIANGLE_STRIP, 0,4);
     glBindVertexArray(0);
 }
+
+void ttf_manager::drawImg(int w, int h) {
+    ///
+    glBindBufferARB(GL_ARRAY_BUFFER, r.vbo);
+    float *ptr = (float*) glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+    if(ptr){
+        ptr[2]=w;
+        ptr[5]=h;
+        ptr[6]=w;
+        ptr[7]=h;
+        glUnmapBufferARB(GL_ARRAY_BUFFER);
+    }
+    ///
+    ///
+    glBindBufferARB(GL_ARRAY_BUFFER, r.tbo);
+    ptr = (float*) glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+    if(ptr){
+        ptr[0]=0;
+        ptr[2]=1;
+        ptr[4]=0;
+        ptr[6]=1;
+        glUnmapBufferARB(GL_ARRAY_BUFFER);
+    }
+    ///
+    glBindVertexArray(r.vao);
+    glDrawArrays( GL_TRIANGLE_STRIP, 0,4);
+    glBindVertexArray(0);
+}

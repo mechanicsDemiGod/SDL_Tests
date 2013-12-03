@@ -1,87 +1,121 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="include\manager.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="124" topLine="5" />
-		</Cursor>
-	</File>
-	<File name="include\manager_space.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="631" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\render_manager.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="142" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="21" />
-		</Folding>
-	</File>
 	<File name="include\ttf_manager.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="726" topLine="0" />
+			<Cursor1 position="613" topLine="7" />
 		</Cursor>
 		<Folding>
 			<Collapse line="11" />
-			<Collapse line="20" />
 		</Folding>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="850" topLine="18" />
+			<Cursor1 position="413" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\manager.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="904" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="include\manager_space.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="466" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="include\render_manager.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="894" topLine="17" />
+		</Cursor>
+	</File>
+	<File name="src\manager.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="692" topLine="3" />
 		</Cursor>
 		<Folding>
-			<Collapse line="39" />
+			<Collapse line="8" />
+			<Collapse line="11" />
+			<Collapse line="15" />
+			<Collapse line="31" />
+			<Collapse line="43" />
+			<Collapse line="45" />
+			<Collapse line="62" />
+			<Collapse line="70" />
+			<Collapse line="71" />
+			<Collapse line="77" />
+			<Collapse line="103" />
+			<Collapse line="112" />
+			<Collapse line="114" />
+			<Collapse line="117" />
+			<Collapse line="120" />
+			<Collapse line="123" />
+			<Collapse line="126" />
+			<Collapse line="129" />
+			<Collapse line="132" />
+			<Collapse line="135" />
+			<Collapse line="138" />
+			<Collapse line="141" />
+			<Collapse line="144" />
+			<Collapse line="147" />
+			<Collapse line="151" />
+			<Collapse line="153" />
+			<Collapse line="154" />
+			<Collapse line="158" />
+			<Collapse line="165" />
+			<Collapse line="166" />
+			<Collapse line="167" />
+			<Collapse line="174" />
+			<Collapse line="179" />
+			<Collapse line="180" />
+			<Collapse line="181" />
+			<Collapse line="185" />
+			<Collapse line="189" />
+			<Collapse line="193" />
+			<Collapse line="197" />
+			<Collapse line="203" />
+			<Collapse line="204" />
+			<Collapse line="205" />
+			<Collapse line="209" />
+			<Collapse line="213" />
+			<Collapse line="217" />
+			<Collapse line="221" />
+			<Collapse line="229" />
 		</Folding>
 	</File>
-	<File name="src\manager.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\manager_space.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1101" topLine="32" />
+			<Cursor1 position="620" topLine="6" />
 		</Cursor>
+		<Folding>
+			<Collapse line="5" />
+			<Collapse line="8" />
+			<Collapse line="15" />
+		</Folding>
 	</File>
-	<File name="src\manager_space.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\render_manager.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="814" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="src\render_manager.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1214" topLine="4" />
+			<Cursor1 position="2055" topLine="8" />
 		</Cursor>
 		<Folding>
 			<Collapse line="6" />
 			<Collapse line="11" />
 			<Collapse line="19" />
 			<Collapse line="29" />
-			<Collapse line="42" />
-			<Collapse line="47" />
-			<Collapse line="57" />
-			<Collapse line="64" />
-			<Collapse line="68" />
-			<Collapse line="72" />
-			<Collapse line="73" />
-			<Collapse line="77" />
-			<Collapse line="90" />
-			<Collapse line="95" />
-			<Collapse line="121" />
-			<Collapse line="138" />
-			<Collapse line="156" />
-			<Collapse line="170" />
-			<Collapse line="175" />
-			<Collapse line="180" />
-			<Collapse line="185" />
+			<Collapse line="96" />
+			<Collapse line="171" />
+			<Collapse line="178" />
 		</Folding>
 	</File>
-	<File name="src\ttf_manager.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\ttf_manager.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="645" topLine="0" />
+			<Cursor1 position="3720" topLine="46" />
 		</Cursor>
 		<Folding>
 			<Collapse line="4" />
 			<Collapse line="7" />
 			<Collapse line="11" />
+			<Collapse line="15" />
 			<Collapse line="22" />
 			<Collapse line="26" />
 			<Collapse line="27" />
@@ -93,9 +127,6 @@
 			<Collapse line="68" />
 			<Collapse line="72" />
 			<Collapse line="79" />
-			<Collapse line="112" />
-			<Collapse line="116" />
-			<Collapse line="127" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
