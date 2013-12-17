@@ -4,7 +4,6 @@
 #include "render_manager.h"
 #include <SDL2/SDL_ttf.h>
 #include <vector>
-#include <glm/gtc/matrix_transform.hpp>
 #include <glm/glm.hpp>
 
 using namespace manager_space;
@@ -27,9 +26,7 @@ public:
     void make(const char *name, int size, int a, int b);
     void write_let(int w, int h,float xt1, float yt1);
     void drawImg(int w, int h);
-    void setMat();
-    void calcMat();
-    glm::mat4 proj, model, view, mvp;
+    camera c;
     int height;
     std::vector<glyph_metric> metrics;
     tex font;

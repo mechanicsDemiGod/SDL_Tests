@@ -33,6 +33,7 @@ public:
     void mouseWheel(int x, int y);
     void initImg();
     void drawImg(int i, float x, float y);
+    void countFrames();
 
     bool runs() {
         return running;
@@ -40,7 +41,7 @@ public:
     void write(int s, float x, float y);
     void write(std::string s, float x, float y);
     //VARIABLES
-    int lasttime;
+    int lasttime, last_sec, frames, fps;
     render_manager gl;
     ttf_manager ttf_manag;
     SDL_Window *window;

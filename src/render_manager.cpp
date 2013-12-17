@@ -4,6 +4,27 @@
 
 using namespace manager_space;
 
+void camera::setMat(int dim){
+    if(dim == 2){
+        proj = glm::ortho(0.f, (float)W, (float)H, 0.f);
+        view = glm::mat4(1);
+        model = glm::mat4(1);
+    }
+    calcMat();
+}
+
+void camera::calcMat(){
+    mvp = proj * view * model;
+}
+
+camera::camera(int dim){
+    setMat(dim);
+}
+
+camera::camera(){
+    setMat(2);
+}
+
 render_obj::render_obj() {
     hasT = false;
     hasV = false;
@@ -40,9 +61,52 @@ render_obj::render_obj(GLuint _vao,GLuint _vbo,GLuint _tbo,GLuint _nbo) {
     nbo = _nbo;
 }
 
+void render_obj::basicPlane(){
+    GLfloat quad_tris[]= {
+        0, 0,
+        1, 0,
+        0, 1,
+        1, 1
+    };
+
+    GLfloat texdata[]= {
+        0, 0,
+        1, 0,
+        0, 1,
+        1, 1
+    };
+
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferData(GL_ARRAY_BUFFER, 4*2*sizeof(float), quad_tris, GL_STATIC_DRAW);
+
+    glGenBuffers(1, &tbo);
+    glBindBuffer(GL_ARRAY_BUFFER, tbo);
+    glBufferData(GL_ARRAY_BUFFER, 4*2*sizeof(float), texdata, GL_STATIC_DRAW);
+
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+    glBindBuffer( GL_ARRAY_BUFFER, vbo );
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
+    glBindBuffer( GL_ARRAY_BUFFER, tbo );
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
+    glBindVertexArray(0);
+    glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
+}
+
 GLuint render_manager::getUniform(const char *s) {
     GLuint prog = getProg(in_use);
     return glGetUniformLocation(prog ,s);
+}
+
+void render_manager::drawImg(int w, int h) {
+
+    glBindVertexArray(r.vao);
+    glDrawArrays( GL_TRIANGLE_STRIP, 0,4);
+    glBindVertexArray(0);
 }
 
 void render_obj::end() {
@@ -185,6 +249,8 @@ void render_manager::init(){
     if(!IMG_Init(IMG_INIT_PNG)){
         output(IMG_GetError());
     }
+    c.setMat(2);
+    r.basicPlane();
 }
 
 GLuint render_manager::getProg(int index) {

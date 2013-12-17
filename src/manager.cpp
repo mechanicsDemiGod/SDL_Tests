@@ -5,7 +5,6 @@
 
 using namespace manager_space;
 
-
 manager::manager() {
 }
 
@@ -15,6 +14,7 @@ manager::~manager() {
 
 void manager::initImg(){
     gl.loadPNG("data/img/test.png");
+    gl.loadPNG("data/img/test.png");
 }
 
 void manager::drawImg(int i, float x, float y){
@@ -22,11 +22,12 @@ void manager::drawImg(int i, float x, float y){
         gl.useProg(IMG_SHADER);
         gl.putTex(gl.texture[i].id, 0, "tex");
     }
-    ttf_manag.view = glm::translate(glm::mat4(1), glm::vec3(x , y, 0));
-    ttf_manag.calcMat();
-    glUniformMatrix4fv(gl.getUniform("mvp"), 1, GL_FALSE, &ttf_manag.mvp[0][0]);
     int w = gl.texture[i].w, h = gl.texture[i].h;
-    ttf_manag.drawImg(w, h);
+    gl.c.view = glm::translate(glm::mat4(1), glm::vec3(x , y, 0));
+    gl.c.model = glm::scale(glm::mat4(1), glm::vec3(w,h,1));
+    gl.c.calcMat();
+    glUniformMatrix4fv(gl.getUniform("mvp"), 1, GL_FALSE, &gl.c.mvp[0][0]);
+    gl.drawImg(w, h);
 }
 
 void manager::init() {
@@ -92,9 +93,9 @@ void manager::write(std::string s, float x, float y){
             xt1 = ttf_manag.metrics[loc-1].wt;
         xt2 = ttf_manag.metrics[loc].wt;
 
-        ttf_manag.view = glm::translate(glm::mat4(1), glm::vec3(x + prec, y, 0));
-        ttf_manag.calcMat();
-        glUniformMatrix4fv(gl.getUniform("mvp"), 1, GL_FALSE, &ttf_manag.mvp[0][0]);
+        ttf_manag.c.view = glm::translate(glm::mat4(1), glm::vec3(x + prec, y, 0));
+        ttf_manag.c.calcMat();
+        glUniformMatrix4fv(gl.getUniform("mvp"), 1, GL_FALSE, &ttf_manag.c.mvp[0][0]);
         prec+=x2-x1;
 
         ttf_manag.write_let(x2-x1, ttf_manag.font.h, xt1, xt2);
@@ -107,6 +108,15 @@ void manager::write(int s, float x, float y){
     stream<<s;
     stream>>ss;
     write(ss, x, y);
+}
+
+void manager::countFrames(){
+    if(SDL_GetTicks() - last_sec >=1000){
+        last_sec = SDL_GetTicks();
+        fps = frames;
+        frames = 0;
+    }
+    frames++;
 }
 
 //SDL

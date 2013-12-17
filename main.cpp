@@ -12,11 +12,14 @@ void draw(manager &manag) {
     manag.write(manager_space::test, 0, 0);
     int time = SDL_GetTicks() - manag.lasttime;
     manag.write(manager_space::FPS - time, W-font_size, 0);
+    manag.write(manag.fps, W-font_size, 30);
+    for(int i=0;i<50;i++)
     manag.drawImg(0,manag.mx, manag.my);
     SDL_GL_SwapWindow(manag.window);
 }
 
 void work(manager &manag) {
+    manag.countFrames();
 }
 
 void init(manager &manag) {

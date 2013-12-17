@@ -13,23 +13,12 @@ ttf_manager::~ttf_manager() {
     //dtor
 }
 
-void ttf_manager::setMat(){
-    proj = glm::ortho(0.f, (float)W, (float)H, 0.f);
-    view = glm::mat4(1);
-    model = glm::mat4(1);
-    mvp = proj * view * model;
-}
-
-void ttf_manager::calcMat(){
-    mvp = proj * view * model;
-}
-
 void ttf_manager::init() {
     if(!TTF_WasInit() && TTF_Init()==-1) {
         output(TTF_GetError());
         sdlDie();
     }
-    setMat();
+    c.setMat(2);
 }
 
 void ttf_manager::end() {
@@ -70,42 +59,8 @@ void ttf_manager::make(const char *name, int size, int a, int b) {
             metrics[i-a].wt = (float)metrics[i-a].w/tot;
     }
 
-    GLfloat quad_tris[]= {
-        0, 0,
-        1, 0,
-        0, 1,
-        1, 1
-    };
+    r.basicPlane();
 
-    GLfloat texdata[]= {
-        0, 0,
-        1, 0,
-        0, 1,
-        1, 1
-    };
-
-    GLuint vao, vbo, tbo;
-
-    glGenBuffers(1, &vbo);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    glBufferData(GL_ARRAY_BUFFER, 4*2*sizeof(float), quad_tris, GL_STATIC_DRAW);
-
-    glGenBuffers(1, &tbo);
-    glBindBuffer(GL_ARRAY_BUFFER, tbo);
-    glBufferData(GL_ARRAY_BUFFER, 4*2*sizeof(float), texdata, GL_STATIC_DRAW);
-
-    glGenVertexArrays(1, &vao);
-    glBindVertexArray(vao);
-    glBindBuffer( GL_ARRAY_BUFFER, vbo );
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
-    glBindBuffer( GL_ARRAY_BUFFER, tbo );
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
-    glBindVertexArray(0);
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
-    r = render_obj(vao, vbo, tbo);
     SDL_FreeSurface(msg);
     TTF_CloseFont(ttf_font);
 }

@@ -3,6 +3,7 @@
 #include "manager_space.h"
 #include <vector>
 #include <string>
+#include <glm/gtc/matrix_transform.hpp>
 #include <glm/glm.hpp>
 
 using namespace std;
@@ -13,10 +14,20 @@ public:
     render_obj(GLuint _vao, GLuint _vbo);
     render_obj(GLuint _vao, GLuint _vbo, GLuint _tbo);
     render_obj(GLuint _vao, GLuint _vbo, GLuint _tbo, GLuint _nbo);
+    void basicPlane();
     void end();
 
     bool hasV, hasT, hasN;
     GLuint vao, vbo, tbo, nbo;
+};
+
+class camera{
+public:
+    camera();
+    camera(int dim);
+    glm::mat4 proj, model, view, mvp;
+    void setMat(int dim);
+    void calcMat();
 };
 
 class render_manager {
@@ -32,8 +43,11 @@ public:
     void putTex(GLuint t_id, int where, const char *var_name);
     void loadPNG(const char *name);
     void deletePNG(int ind);
+    void drawImg(int w,int h);
 
     int in_use;
+    camera c;
+    render_obj r;
     vector<GLuint> prog;
     vector<tex> texture;
 };

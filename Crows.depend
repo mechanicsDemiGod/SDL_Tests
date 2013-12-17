@@ -1,32 +1,31 @@
 # depslib dependency file v1.0
-1385157535 source:c:\users\estar\desktop\sdl-tests-master\main.cpp
+1387272116 source:c:\users\estar\desktop\sdl-tests-master\main.cpp
 	<fstream>
 	<cstdio>
 	<glm/glm.hpp>
 	"include/manager.h"
 
-1385157519 source:c:\users\estar\desktop\sdl-tests-master\src\manager.cpp
+1387272218 source:c:\users\estar\desktop\sdl-tests-master\src\manager.cpp
 	"..\include\manager.h"
 	<cstdlib>
 	<sstream>
 
-1385156853 c:\users\estar\desktop\sdl-tests-master\include\manager.h
+1387269879 c:\users\estar\desktop\sdl-tests-master\include\manager.h
 	"manager_space.h"
 	"render_manager.h"
 	"ttf_manager.h"
 	<string>
 
-1385157649 source:c:\users\estar\desktop\sdl-tests-master\src\ttf_manager.cpp
+1387271693 source:c:\users\estar\desktop\sdl-tests-master\src\ttf_manager.cpp
 	"../include/ttf_manager.h"
 	<cmath>
 	<string>
 
-1385156988 c:\users\estar\desktop\sdl-tests-master\include\ttf_manager.h
+1387271131 c:\users\estar\desktop\sdl-tests-master\include\ttf_manager.h
 	"manager_space.h"
 	"render_manager.h"
 	<SDL2/SDL_ttf.h>
 	<vector>
-	<glm/gtc/matrix_transform.hpp>
 	<glm/glm.hpp>
 
 1385157212 c:\users\estar\desktop\sdl-tests-master\include\manager_space.h
@@ -51,16 +50,70 @@
 	<GL/gl.h>
 	<vector>
 
-1385156893 c:\users\estar\desktop\sdl-tests-master\include\render_manager.h
+1387271642 c:\users\estar\desktop\sdl-tests-master\include\render_manager.h
 	"manager_space.h"
 	<vector>
 	<string>
+	<glm/gtc/matrix_transform.hpp>
 	<glm/glm.hpp>
 
-1385157117 source:c:\users\estar\desktop\sdl-tests-master\src\render_manager.cpp
+1387271978 source:c:\users\estar\desktop\sdl-tests-master\src\render_manager.cpp
 	"../include/render_manager.h"
 	<fstream>
 	<SDL2/SDL_image.h>
 
 1382127125 source:c:\users\estar\desktop\sdl-tests-master\icon.rc
+
+1387272116 source:d:\git\sdl-tests-master\main.cpp
+	<fstream>
+	<cstdio>
+	<glm/glm.hpp>
+	"include/manager.h"
+
+1387269879 d:\git\sdl-tests-master\include\manager.h
+	"manager_space.h"
+	"render_manager.h"
+	"ttf_manager.h"
+	<string>
+
+1385157212 d:\git\sdl-tests-master\include\manager_space.h
+	<SDL2/SDL.h>
+	<GL/glew.h>
+	<GL/gl.h>
+	<iostream>
+
+1387271642 d:\git\sdl-tests-master\include\render_manager.h
+	"manager_space.h"
+	<vector>
+	<string>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/glm.hpp>
+
+1387271131 d:\git\sdl-tests-master\include\ttf_manager.h
+	"manager_space.h"
+	"render_manager.h"
+	<SDL2/SDL_ttf.h>
+	<vector>
+	<glm/glm.hpp>
+
+1387272449 source:d:\git\sdl-tests-master\src\manager.cpp
+	"..\include\manager.h"
+	<cstdlib>
+	<sstream>
+
+1385157208 source:d:\git\sdl-tests-master\src\manager_space.cpp
+	"../include/manager_space.h"
+	<cstdlib>
+	<stdio.h>
+	<SDL2/SDL_image.h>
+
+1387274826 source:d:\git\sdl-tests-master\src\render_manager.cpp
+	"../include/render_manager.h"
+	<fstream>
+	<SDL2/SDL_image.h>
+
+1387271693 source:d:\git\sdl-tests-master\src\ttf_manager.cpp
+	"../include/ttf_manager.h"
+	<cmath>
+	<string>
 
